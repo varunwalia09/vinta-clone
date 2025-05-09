@@ -1,0 +1,76 @@
+/* smoke cursor  */
+.smoke-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* So it doesn't block clicks */
+    overflow: hidden;
+    z-index: 9999;
+  }
+  
+  .smoke {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #A1C9B8;
+    border-radius: 50%;
+    opacity: 0;
+    animation: fade 1s forwards;
+  }
+  
+  .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #A1C9B8; /* Color for the dot */
+    border-radius: 50%;
+    opacity: 1;
+    animation: dotFade 1s forwards;
+  }
+  
+  /* Smoke animations for movement */
+  .smoke.left {
+    animation: smoke-left 1s forwards;
+  }
+  
+  .smoke.right {
+    animation: smoke-right 1s forwards;
+  }
+  
+  .smoke.up {
+    animation: smoke-up 1s forwards;
+  }
+  
+  .smoke.down {
+    animation: smoke-down 1s forwards;
+  }
+  
+  /* Keyframes for smoke animation */
+  @keyframes smoke-left {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-50px); opacity: 0; }
+  }
+  
+  @keyframes smoke-right {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(50px); opacity: 0; }
+  }
+  
+  @keyframes smoke-up {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-50px); opacity: 0; }
+  }
+  
+  @keyframes smoke-down {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(50px); opacity: 0; }
+  }
+  
+  /* Dot fading animation */
+  @keyframes dotFade {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+  }
+  

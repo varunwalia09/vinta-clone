@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-
+import './SmokeTrail.css'
 const SmokeTrail = () => {
   const containerRef = useRef(null);
   const [dots, setDots] = useState([]);  // Store dots for rendering
